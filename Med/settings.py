@@ -131,9 +131,15 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 #     }
 # }
 
+# postgresql://postgres:RTjTUOLSXbSJTEBKZrYgnDycKQFQRbVK@postgres.railway.internal:5432/railway
+# DATABASES ={
+#     'default':dj_database_url.config(default=os.getenv('DATABASE_URL'))
+# }
+
 DATABASES ={
-    'default':dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default':dj_database_url.config(default="postgresql://postgres:RTjTUOLSXbSJTEBKZrYgnDycKQFQRbVK@postgres.railway.internal:5432/railway")
 }
+
 
 AUTH_USER_MODEL = 'A10_Usu.CustomUser'
 
