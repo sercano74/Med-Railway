@@ -186,7 +186,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),  # Archivos estáticos generales del proyecto
                     os.path.join(BASE_DIR, 'A10_Usu', 'static'), # Archivos estáticos de la app A10_Usu
                     os.path.join(BASE_DIR, 'A20_Hrs', 'static'), # Archivos estáticos de la app A20_Hrs
-                    os.path.join(BASE_DIR, 'A31_Con', 'static'), # Archivos estáticos de la app A20_Hrs
+                    # os.path.join(BASE_DIR, 'A31_Con', 'static'), # Archivos estáticos de la app A20_Hrs
                 ]
 
 # Esta configuración define la carpeta final donde se almacenarán todos tus archivos estáticos
