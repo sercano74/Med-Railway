@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
     'django.contrib.sites',
     'A10_Usu',
     'A20_Hrs',
@@ -68,6 +69,7 @@ SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -180,7 +182,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root') #  python manage.py collects
 # Esto copiará todos los archivos estáticos desde las carpetas especificadas en STATICFILES_DIRS
 # (incluyendo tu imagen calendar.jpeg desde A20_Hrs/static/images) a la carpeta STATIC_ROOT.
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # Para producción, usa WhiteNoise para servir archivos estáticos.
 
 MEDIA_URL = '/media/'     # Ruta para acceder desde web
 # MEDIA_URL = 'https://tu-dominio.com/media/'  # Para producción
